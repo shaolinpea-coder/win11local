@@ -61,3 +61,13 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Backup" `
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Backup" `
  /v Enabled /t REG_DWORD /d 0 /f
 
+# Kill OneDrive shell backup nags (new Win11)
+reg add "HKCU\Software\Microsoft\OneDrive" `
+ /v DisablePersonalSync /t REG_DWORD /d 1 /f
+
+reg add "HKCU\Software\Microsoft\OneDrive" `
+ /v DisableAutoConfig /t REG_DWORD /d 1 /f
+
+reg add "HKLM\SOFTWARE\Policies\Microsoft\OneDrive" `
+ /v DisablePersonalSync /t REG_DWORD /d 1 /f
+
