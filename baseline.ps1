@@ -53,3 +53,11 @@ reg unload HKU\DefaultUser
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" `
  /v HiberbootEnabled /t REG_DWORD /d 0 /f
 
+# Disable Windows Backup app prompts
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Backup" `
+ /v DisableWindowsBackup /t REG_DWORD /d 1 /f
+
+# Disable backup reminders
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Backup" `
+ /v Enabled /t REG_DWORD /d 0 /f
+
